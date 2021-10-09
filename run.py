@@ -32,26 +32,27 @@ def welcome_user():
     Get users name and show welcome message
     """
     users_name = input("What is your name?\n")
-    print(f"Hello {users_name}. Welcome to your Perfumes Stock App")
+    print(f"Hello {users_name}.\nWelcome to your Perfumes Stock App\n")
+    user_app_options()
 
 
 def user_app_options():
     """
     Give users 3 app options to select from to run the program
     """
-    view_current_stock = input("View Current Stock")
-    add_daily_sales = input("Add Daily Sales")
-    view_warehouse_stock = input("View Warehouse Stock")
 
-    print(view_current_stock)
-    print(add_daily_sales)
-    print(view_warehouse_stock)
+    view_current_stock = "View Current Stock".strip("")
+    add_daily_sales = "Add Daily Sales".strip("")
+    view_warehouse_stock = "View Warehouse Stock".strip("")
 
-    print("please slect what you would like to do?")
+    print(f"{view_current_stock}, {add_daily_sales}, {view_warehouse_stock}\n")
+
+    print("Tip: Copy & Paste your list selection to ensure no typos :)")
+    user_selection = input("From list above, what you would like to do today?")
+    print(f"You've chosen: {user_selection}")
 
 
 welcome_user()
-user_app_options()
 
 
 # python3 run.py
