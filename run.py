@@ -24,6 +24,10 @@ store_stock_data = store_stock.get_all_values()
 warehouse_stock = SHEET.worksheet('warehouse_stock')
 warehouse_stock_data = warehouse_stock.get_all_values()
 
-print(warehouse_stock_data)
+# print(warehouse_stock_data)
+
+# Welcome User
+users_name = input("What is your name?\n")
+print(f"Hello {users_name}. Welcome to your Perfumes Stock App")
 
 # python3 run.py
