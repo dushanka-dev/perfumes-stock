@@ -16,9 +16,14 @@ SHEET = GSPREAD_CLIENT.open('perfumes_stock')
 daily_sales = SHEET.worksheet('daily_sales')
 sales_data = daily_sales.get_all_values()
 
-print(sales_data)
+# Store Stock Worksheet
+store_stock = SHEET.worksheet('store_stock')
+store_stock_data = store_stock.get_all_values()
 
+# Warehouse Stock Worksheet
+warehouse_stock = SHEET.worksheet('warehouse_stock')
+warehouse_stock_data = warehouse_stock.get_all_values()
 
+print(warehouse_stock_data)
 
-
-
+# python3 run.py
