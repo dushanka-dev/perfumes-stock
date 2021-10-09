@@ -26,8 +26,32 @@ warehouse_stock_data = warehouse_stock.get_all_values()
 
 # print(warehouse_stock_data)
 
-# Welcome User
-users_name = input("What is your name?\n")
-print(f"Hello {users_name}. Welcome to your Perfumes Stock App")
+
+def welcome_user():
+    """
+    Get users name and show welcome message
+    """
+    users_name = input("What is your name?\n")
+    print(f"Hello {users_name}. Welcome to your Perfumes Stock App")
+
+
+def user_app_options():
+    """
+    Give users 3 app options to select from to run the program
+    """
+    view_current_stock = input("View Current Stock")
+    add_daily_sales = input("Add Daily Sales")
+    view_warehouse_stock = input("View Warehouse Stock")
+
+    print(view_current_stock)
+    print(add_daily_sales)
+    print(view_warehouse_stock)
+
+    print("please slect what you would like to do?")
+
+
+welcome_user()
+user_app_options()
+
 
 # python3 run.py
