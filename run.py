@@ -53,6 +53,9 @@ def user_app_options():
         print(f"You've chosen: {user_selection}\n")
         option_validation(user_selection)
 
+        if user_selection == "Add Daily Sales":
+            return add_daily_sales()
+
 
 def option_validation(user_selection):
     """
@@ -74,6 +77,18 @@ def option_validation(user_selection):
         return False
 
     return True
+
+
+def add_daily_sales():
+    """
+    User can add daily sale here.
+    Once users add sales it will be added to the worksheet.
+
+    """
+    print("Please add ',' after each sale amount")
+    user_sales = int(input("What is today's sales? "))
+    print(user_sales)
+    # add_sales_data = SHEET.worksheet("daily_sales")
 
 
 welcome_user()
