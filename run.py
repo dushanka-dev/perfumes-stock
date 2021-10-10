@@ -51,10 +51,11 @@ def user_app_options():
         print("Tip: Copy & Paste your list selection to ensure no typos :)")
         user_selection = input("Pick a task from list above ^^\n")
         print(f"You've chosen: {user_selection}\n")
-        option_validation(user_selection)
 
         if user_selection == "Add Daily Sales":
             return add_daily_sales()
+
+        option_validation(user_selection)
 
 
 def option_validation(user_selection):
@@ -87,8 +88,15 @@ def add_daily_sales():
     """
     print("Please add ',' after each sale amount")
     user_sales = int(input("What is today's sales? "))
-    print(user_sales)
-    # add_sales_data = SHEET.worksheet("daily_sales")
+    print(f"Updating {user_sales}")
+
+
+# def update_sales_sheet(user_sales, sales_worksheet):
+#     """Update daily worksheet"""
+
+#     sales_worksheet = SHEET.worksheet("daily_sales")
+
+#     sales_worksheet.append_row(user_sales)
 
 
 welcome_user()
@@ -96,3 +104,4 @@ user_app_options()
 
 
 # python3 run.py
+# 1, 2, 3, 4, 5, 6, 7
