@@ -41,15 +41,15 @@ def user_app_options():
     """
 
     while True:
-        view_current_stock = "View Current Stock".strip("")
-        add_daily_sales = "Add Daily Sales".strip("")
-        view_warehouse_stock = "View Warehouse Stock".strip("")
+        current_stock = "View Current Stock\n".strip("")
+        add_sales = "Add Daily Sales\n".strip("")
+        warehouse_stock = "View Warehouse Stock\n".strip("")
 
-        print("What would you like to do today?...")
-        print(f"{view_current_stock},{add_daily_sales},{view_warehouse_stock}")
+        print("What would you like to do today?\n")
+        print(f"{current_stock}{add_sales}{warehouse_stock}")
 
         print("Tip: Copy & Paste your list selection to ensure no typos :)")
-        user_selection = input("Pick a task from list above\n")
+        user_selection = input("Pick a task from list above ^^\n")
         print(f"You've chosen: {user_selection}\n")
         option_validation(user_selection)
 
@@ -68,11 +68,12 @@ def option_validation(user_selection):
             raise ValueError(f"You selected {user_selection}")
         elif user_selection != "View Warehouse Stock":
             raise ValueError(f"You selected {user_selection}")
-        else:
-            return True
+
     except ValueError as e:
         print(f"Invalid option: {e}. Please try again...")
         return False
+
+    return True
 
 
 welcome_user()
