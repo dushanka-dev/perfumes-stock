@@ -86,19 +86,20 @@ def add_daily_sales():
     """
     print("Please add ',' after each sale amount")
     user_sales = input("What is today's sales? ")
+    new_sales = user_sales.split(",")
+    our_new_list = [val for val in new_sales]
+    print(our_new_list)
 
     daily_sales_sheet = SHEET.worksheet("daily_sales")
-
-    if daily_sales_sheet.row_values == "":
-        daily_sales_sheet.append_row(user_sales)
+    daily_sales_sheet.append_row(our_new_list)
 
     # i = 1
     # while daily_sales_sheet.cell(i, 1).value != "":
     #     i = i + 1
     #     break
 
-    print("Updating...")
-    print("Worksheet successfully updated with new sales!")
+    # print("Updating...")
+    # print("Worksheet successfully updated with new sales!")
 
 
 def view_current_stock():
