@@ -16,10 +16,6 @@ SHEET = GSPREAD_CLIENT.open('perfumes_stock')
 daily_sales = SHEET.worksheet('daily_sales')
 sales_data = daily_sales.get_all_values()
 
-# Store Stock Worksheet
-store_stock = SHEET.worksheet('store_stock')
-store_stock_data = store_stock.get_all_values()
-
 # Warehouse Stock Worksheet
 warehouse_stock = SHEET.worksheet('warehouse_stock')
 warehouse_stock_data = warehouse_stock.get_all_values()
@@ -54,6 +50,8 @@ def user_app_options():
 
         if user_selection == "Add Daily Sales":
             return add_daily_sales()
+        elif user_selection == "View Current Stock":
+            return view_current_stock()
 
         option_validation(user_selection)
 
@@ -89,6 +87,17 @@ def add_daily_sales():
     print("Please add ',' after each sale amount")
     user_sales = int(input("What is today's sales? "))
     print(f"Updating {user_sales}")
+
+
+def view_current_stock():
+    """
+    When user choose to View Current Stock,
+    program will pull current stock data from worksheet.
+    """
+
+    store_stock = SHEET.worksheet("store_stock")
+    current_stock_values = store_stock.row_values(6)
+    print(current_stock_values)
 
 
 # def update_sales_sheet(user_sales, sales_worksheet):
