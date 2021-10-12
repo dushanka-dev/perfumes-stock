@@ -96,6 +96,7 @@ def add_daily_sales():
 
     print("Sales Updated successfully")
 
+    # Return user back to options menu
     user_app_options()
 
 
@@ -105,9 +106,13 @@ def view_current_stock():
     program will pull current stock data from worksheet.
     """
 
-    store_stock = SHEET.worksheet("store_stock")
-    current_stock_values = store_stock.row_values(6)
-    print(current_stock_values)
+    store_stock = SHEET.worksheet("store_stock").get_all_values()
+    latest_stock = store_stock[-1]
+    print(latest_stock)
+
+    user_app_options()
+    # current_stock_values = store_stock.row_values(6)
+    # print(current_stock_values)
 
 
 # def update_sales_sheet(user_sales, sales_worksheet):
