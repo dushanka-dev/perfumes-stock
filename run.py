@@ -108,7 +108,7 @@ def view_current_stock():
 
     store_stock = SHEET.worksheet("store_stock").get_all_values()
     latest_stock = store_stock[-1]
-    print(latest_stock)
+    print(", ".join(latest_stock))
 
     user_app_options()
     # current_stock_values = store_stock.row_values(6)
