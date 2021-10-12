@@ -12,13 +12,13 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('perfumes_stock')
 
-# Daily Sales Worksheet
-daily_sales = SHEET.worksheet('daily_sales')
-sales_data = daily_sales.get_all_values()
+# # Daily Sales Worksheet
+# daily_sales = SHEET.worksheet('daily_sales')
+# sales_data = daily_sales.get_all_values()
 
-# Warehouse Stock Worksheet
-warehouse_stock = SHEET.worksheet('warehouse_stock')
-warehouse_stock_data = warehouse_stock.get_all_values()
+# # Warehouse Stock Worksheet
+# warehouse_stock = SHEET.worksheet('warehouse_stock')
+# warehouse_stock_data = warehouse_stock.get_all_values()
 
 # print(warehouse_stock_data)
 
@@ -85,9 +85,10 @@ def add_daily_sales():
 
     """
     print("Please add ',' after each sale amount")
+
     user_sales = input("What is today's sales? ")
     new_sales = user_sales.split(",")
-    our_new_list = [val for val in new_sales]
+    our_new_list = list(new_sales)
     print(our_new_list)
 
     daily_sales_sheet = SHEET.worksheet("daily_sales")
