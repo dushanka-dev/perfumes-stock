@@ -87,12 +87,16 @@ def add_daily_sales():
     print("Please add ',' after each sale amount")
 
     user_sales = input("What is today's sales? ")
+    print("Update Sales...")
     new_sales = user_sales.split(",")
     our_new_list = list(new_sales)
-    print(our_new_list)
 
     daily_sales_sheet = SHEET.worksheet("daily_sales")
     daily_sales_sheet.append_row(our_new_list)
+
+    print("Sales Updated successfully")
+
+    user_app_options()
 
 
 def view_current_stock():
