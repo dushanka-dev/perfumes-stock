@@ -50,7 +50,7 @@ def user_app_options():
 
         if user_selection == "Add Daily Sales":
             return add_daily_sales()
-        elif user_selection == "View Current Stock":
+        if user_selection == "View Current Stock":
             return view_current_stock()
 
         option_validation(user_selection)
@@ -66,13 +66,13 @@ def option_validation(user_selection):
     try:
         if user_selection != "View Current Stock":
             raise ValueError(f"You selected {user_selection}")
-        elif user_selection != "Add Daily Sales":
+        if user_selection != "Add Daily Sales":
             raise ValueError(f"You selected {user_selection}")
-        elif user_selection != "View Warehouse Stock":
+        if user_selection != "View Warehouse Stock":
             raise ValueError(f"You selected {user_selection}")
 
-    except ValueError as e:
-        print(f"Invalid option: {e}. Please try again...")
+    except ValueError as err:
+        print(f"Invalid option: {err}. Please try again...")
         return False
 
     return True
@@ -93,14 +93,6 @@ def add_daily_sales():
 
     daily_sales_sheet = SHEET.worksheet("daily_sales")
     daily_sales_sheet.append_row(our_new_list)
-
-    # i = 1
-    # while daily_sales_sheet.cell(i, 1).value != "":
-    #     i = i + 1
-    #     break
-
-    # print("Updating...")
-    # print("Worksheet successfully updated with new sales!")
 
 
 def view_current_stock():
