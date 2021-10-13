@@ -126,7 +126,7 @@ def stock_in_transit():
     transit_stock = SHEET.worksheet("warehouse_stock").get_all_values()
     latest_transit_stock = transit_stock[-1]
 
-    print(", ".join(latest_transit_stock))
+    print(f'Latest Stock in Transit: {", ".join(latest_transit_stock)}\n')
 
     user_app_options()
 
