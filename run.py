@@ -46,7 +46,7 @@ def user_app_options():
 
         print("Tip: Copy & Paste your list selection to ensure no typos :)")
         user_selection = input("Pick a task from list above ^^\n")
-        print(f"You've chosen: {user_selection}\n")
+        print(f"Selected Option: {user_selection}\n")
 
         if user_selection == "Add Daily Sales":
             return add_daily_sales()
@@ -91,10 +91,10 @@ def add_daily_sales():
     user_sales = input("What is today's sales? ")
     print("Update Sales...")
     new_sales = user_sales.split(",")
-    our_new_list = list(new_sales)
+    new_sales_list = list(new_sales)
 
     daily_sales_sheet = SHEET.worksheet("daily_sales")
-    daily_sales_sheet.append_row(our_new_list)
+    daily_sales_sheet.append_row(new_sales_list)
 
     print("Sales Updated successfully")
 
@@ -113,8 +113,6 @@ def view_current_stock():
     print(", ".join(latest_stock))
 
     user_app_options()
-    # current_stock_values = store_stock.row_values(6)
-    # print(current_stock_values)
 
 
 def stock_in_transit():
@@ -129,6 +127,13 @@ def stock_in_transit():
     print(f'Latest Stock in Transit: {", ".join(latest_transit_stock)}\n')
 
     user_app_options()
+
+
+def update_all_sheets():
+    """
+    When user adds new sales,
+    all sheets gets updated.
+    """
 
 
 # def update_sales_sheet(user_sales, sales_worksheet):
