@@ -52,6 +52,8 @@ def user_app_options():
             return add_daily_sales()
         if user_selection == "View Current Stock":
             return view_current_stock()
+        if user_selection == "View Warehouse Stock":
+            return stock_in_transit()
 
         option_validation(user_selection)
 
@@ -113,6 +115,20 @@ def view_current_stock():
     user_app_options()
     # current_stock_values = store_stock.row_values(6)
     # print(current_stock_values)
+
+
+def stock_in_transit():
+    """
+    This function calculates the latest stock in transit
+    from warehouse and display to user.
+    """
+
+    transit_stock = SHEET.worksheet("warehouse_stock").get_all_values()
+    latest_transit_stock = transit_stock[-1]
+
+    print(", ".join(latest_transit_stock))
+
+    user_app_options()
 
 
 # def update_sales_sheet(user_sales, sales_worksheet):
