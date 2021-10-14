@@ -86,7 +86,6 @@ def add_daily_sales():
     Once users add sales it will be added to the worksheet.
 
     """
-    print("Please add ',' after each sale amount")
 
     daily_sales_sheet = SHEET.worksheet("daily_sales")
     perfume_names = daily_sales_sheet.row_values(1)
