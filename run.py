@@ -90,9 +90,14 @@ def add_daily_sales():
 
     daily_sales_sheet = SHEET.worksheet("daily_sales")
     perfume_names = daily_sales_sheet.row_values(1)
-    name_values = "\n".join(perfume_names)
+    # name_values = "\n".join(perfume_names)
 
-    print(name_values)
+    for name in perfume_names:
+        new_sales = input(f"What is today's sales? {name}: ")
+        add_sales = f"{name} {new_sales}"
+        print(add_sales)
+
+    print(perfume_names)
 
     # user_sales = input("What is today's sales? ")
     print("Update Sales...")
