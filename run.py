@@ -88,18 +88,24 @@ def add_daily_sales():
     """
     print("Please add ',' after each sale amount")
 
-    user_sales = input("What is today's sales? ")
-    print("Update Sales...")
-    new_sales = user_sales.split(",")
-    new_sales_list = list(new_sales)
-
     daily_sales_sheet = SHEET.worksheet("daily_sales")
-    daily_sales_sheet.append_row(new_sales_list)
+    perfume_names = daily_sales_sheet.row_values(1)
+    name_values = "\n".join(perfume_names)
 
-    print("Sales Updated successfully")
+    print(name_values)
+
+    # user_sales = input("What is today's sales? ")
+    print("Update Sales...")
+    # new_sales = user_sales.split(",")
+    # new_sales_list = list(new_sales)
+
+    # daily_sales_sheet = SHEET.worksheet("daily_sales")
+    # daily_sales_sheet.append_row(new_sales_list)
+
+    # print("Sales Updated successfully")
 
     # Return user back to options menu
-    user_app_options()
+    # user_app_options()
 
 
 def view_current_stock():
@@ -135,13 +141,6 @@ def update_all_sheets():
     all sheets gets updated.
     """
 
-
-# def update_sales_sheet(user_sales, sales_worksheet):
-#     """Update daily worksheet"""
-
-#     sales_worksheet = SHEET.worksheet("daily_sales")
-
-#     sales_worksheet.append_row(user_sales)
 
 welcome_user()
 user_app_options()
