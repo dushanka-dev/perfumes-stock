@@ -39,10 +39,11 @@ def user_app_options():
     while True:
         current_stock = "View Current Stock\n".strip("")
         add_sales = "Add Daily Sales\n".strip("")
-        warehouse_stock = "View Warehouse Stock\n".strip("")
+        warehouse_option = "View Warehouse Stock\n".strip("")
+        transit_stock = "Stock in Transit\n".strip("")
 
         print("What would you like to do today?\n")
-        print(f"{current_stock}{add_sales}{warehouse_stock}")
+        print(f"{current_stock}{add_sales}{warehouse_option}{transit_stock}")
 
         print("Tip: Copy & Paste your list selection to ensure no typos :)")
         user_selection = input("Pick a task from list above ^^\n")
@@ -53,7 +54,7 @@ def user_app_options():
         if user_selection == "View Current Stock":
             return view_current_stock()
         if user_selection == "View Warehouse Stock":
-            return stock_in_transit()
+            return warehouse_stock()
 
         option_validation(user_selection)
 
@@ -116,16 +117,16 @@ def view_current_stock():
     user_app_options()
 
 
-def stock_in_transit():
+def warehouse_stock():
     """
     This function calculates the latest stock in transit
     from warehouse and display to user.
     """
 
-    transit_stock = SHEET.worksheet("warehouse_stock").get_all_values()
-    latest_transit_stock = transit_stock[-1]
+    warehouse_stock_data = SHEET.worksheet("warehouse_stock").get_all_values()
+    latest_warehouse_stock = warehouse_stock_data[-1]
 
-    print(f'Latest Stock in Transit: {", ".join(latest_transit_stock)}\n')
+    print(f'Latest Stock in Transit: {", ".join(latest_warehouse_stock)}\n')
 
     user_app_options()
 
