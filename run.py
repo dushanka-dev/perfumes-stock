@@ -136,9 +136,22 @@ def warehouse_stock():
 
 
 # def update_data(new_sales_list):
-#     """Update all worksheets with latest Data after user adds new sales."""
+#     """Calculate latest Data after user adds new sales."""
 
-#     latest_sales = new_sales_list
+#     current_stock = store_worksheet = SHEET.worksheet("store_stock")
+
+#     updated_store_data = []
+#     for new_sales in new_sales_list:
+#         add_sales_store = int(current_stock) - new_sales
+#         updated_store_data.append(add_sales_store)
+
+#     store_worksheet.append_row(updated_store_data)
+
+
+# def update_all_worksheets():
+#     """
+#     Update all worksheets with latest data
+#     """
 
 
 # def stock_in_transit(latest_warehouse_stock):
