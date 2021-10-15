@@ -116,7 +116,7 @@ def view_current_stock():
 
     store_stock = SHEET.worksheet("store_stock").get_all_values()
     latest_stock = store_stock[-1]
-    print(", ".join(latest_stock))
+    print(f'Latest Store Stock: {", ".join(latest_stock)}\n')
 
     user_app_options()
 
@@ -130,7 +130,7 @@ def warehouse_stock():
     warehouse_stock_data = SHEET.worksheet("warehouse_stock").get_all_values()
     latest_warehouse_stock = warehouse_stock_data[-1]
 
-    print(f'Latest Stock in Transit: {", ".join(latest_warehouse_stock)}\n')
+    print(f'Latest Warehouse Stock: {", ".join(latest_warehouse_stock)}\n')
 
     user_app_options()
 
