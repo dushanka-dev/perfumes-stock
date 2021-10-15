@@ -55,6 +55,8 @@ def user_app_options():
             return view_current_stock()
         if user_selection == "View Warehouse Stock":
             return warehouse_stock()
+        # if user_selection == "Stock in Transit":
+        #     return warehouse_stock()
 
         option_validation(user_selection)
 
@@ -73,6 +75,8 @@ def option_validation(user_selection):
             raise ValueError(f"You selected {user_selection}")
         if user_selection != "View Warehouse Stock":
             raise ValueError(f"You selected {user_selection}")
+        # if user_selection != "Stock in Transit":
+        #     raise ValueError(f"You selected {user_selection}")
 
     except ValueError as err:
         print(f"Invalid option: {err}. Please try again...")
@@ -131,11 +135,24 @@ def warehouse_stock():
     user_app_options()
 
 
-def update_all_sheets():
-    """
-    When user adds new sales,
-    all sheets gets updated.
-    """
+# def update_data(new_sales_list):
+#     """Update all worksheets with latest Data after user adds new sales."""
+
+#     latest_sales = new_sales_list
+
+
+# def stock_in_transit(latest_warehouse_stock):
+#     """
+#     When user adds new sales,
+#     all sheets gets updated.
+#     """
+#     total_stock = []
+
+#     for stock in latest_warehouse_stock:
+#         add_stock = range(stock)
+#         total_stock.append(add_stock)
+
+#     print(f"Total Transit Stock: {total_stock}")
 
 
 welcome_user()
