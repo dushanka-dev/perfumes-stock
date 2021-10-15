@@ -39,10 +39,11 @@ def user_app_options():
     while True:
         current_stock = "View Current Stock\n".strip("")
         add_sales = "Add Daily Sales\n".strip("")
-        warehouse_stock = "View Warehouse Stock\n".strip("")
+        warehouse_option = "View Warehouse Stock\n".strip("")
+        transit_stock = "Stock in Transit\n".strip("")
 
         print("What would you like to do today?\n")
-        print(f"{current_stock}{add_sales}{warehouse_stock}")
+        print(f"{current_stock}{add_sales}{warehouse_option}{transit_stock}")
 
         print("Tip: Copy & Paste your list selection to ensure no typos :)")
         user_selection = input("Pick a task from list above ^^\n")
@@ -53,7 +54,9 @@ def user_app_options():
         if user_selection == "View Current Stock":
             return view_current_stock()
         if user_selection == "View Warehouse Stock":
-            return stock_in_transit()
+            return warehouse_stock()
+        # if user_selection == "Stock in Transit":
+        #     return warehouse_stock()
 
         option_validation(user_selection)
 
@@ -72,6 +75,8 @@ def option_validation(user_selection):
             raise ValueError(f"You selected {user_selection}")
         if user_selection != "View Warehouse Stock":
             raise ValueError(f"You selected {user_selection}")
+        # if user_selection != "Stock in Transit":
+        #     raise ValueError(f"You selected {user_selection}")
 
     except ValueError as err:
         print(f"Invalid option: {err}. Please try again...")
@@ -111,30 +116,56 @@ def view_current_stock():
 
     store_stock = SHEET.worksheet("store_stock").get_all_values()
     latest_stock = store_stock[-1]
-    print(", ".join(latest_stock))
+    print(f'Latest Store Stock: {", ".join(latest_stock)}\n')
 
     user_app_options()
 
 
-def stock_in_transit():
+def warehouse_stock():
     """
     This function calculates the latest stock in transit
     from warehouse and display to user.
     """
 
-    transit_stock = SHEET.worksheet("warehouse_stock").get_all_values()
-    latest_transit_stock = transit_stock[-1]
+    warehouse_stock_data = SHEET.worksheet("warehouse_stock").get_all_values()
+    latest_warehouse_stock = warehouse_stock_data[-1]
 
-    print(f'Latest Stock in Transit: {", ".join(latest_transit_stock)}\n')
+    print(f'Latest Warehouse Stock: {", ".join(latest_warehouse_stock)}\n')
 
     user_app_options()
 
 
-def update_all_sheets():
-    """
-    When user adds new sales,
-    all sheets gets updated.
-    """
+# def update_data(new_sales_list):
+#     """Calculate latest Data after user adds new sales."""
+
+#     current_stock = store_worksheet = SHEET.worksheet("store_stock")
+
+#     updated_store_data = []
+#     for new_sales in new_sales_list:
+#         add_sales_store = int(current_stock) - new_sales
+#         updated_store_data.append(add_sales_store)
+
+#     store_worksheet.append_row(updated_store_data)
+
+
+# def update_all_worksheets():
+#     """
+#     Update all worksheets with latest data
+#     """
+
+
+# def stock_in_transit(latest_warehouse_stock):
+#     """
+#     When user adds new sales,
+#     all sheets gets updated.
+#     """
+#     total_stock = []
+
+#     for stock in latest_warehouse_stock:
+#         add_stock = range(stock)
+#         total_stock.append(add_stock)
+
+#     print(f"Total Transit Stock: {total_stock}")
 
 
 welcome_user()
