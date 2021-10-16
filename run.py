@@ -175,7 +175,7 @@ def update_data(new_sales_list, latest_stock, latest_warehouse_stock):
         updated_warehouse_data.append(add_sales_warehouse)
 
     SHEET.worksheet("store_stock").append_row(updated_store_data)
-    SHEET.worksheet("warehouse_stock").append_row(updated_store_data)
+    SHEET.worksheet("warehouse_stock").append_row(updated_warehouse_data)
 
 
 # def stock_in_transit(latest_warehouse_stock):
