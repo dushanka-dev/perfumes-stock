@@ -122,9 +122,8 @@ def view_current_stock():
     program will pull current stock data from worksheet.
     """
 
-    store_stock = SHEET.worksheet("store_stock").get_all_values()
-    latest_stock = store_stock[-1]
-    print(f'Latest Store Stock: {", ".join(latest_stock)}\n')
+    current_store_stock = get_stock_values()
+    print(f'Latest Store Stock: {", ".join(current_store_stock)}\n')
 
     user_app_options()
 
@@ -135,10 +134,9 @@ def warehouse_stock():
     from warehouse and display to user.
     """
 
-    warehouse_stock_data = SHEET.worksheet("warehouse_stock").get_all_values()
-    latest_warehouse_stock = warehouse_stock_data[-1]
+    warehouse_data = get_latest_warehouse_values()
 
-    print(f'Latest Warehouse Stock: {", ".join(latest_warehouse_stock)}\n')
+    print(f'Latest Warehouse Stock: {", ".join(warehouse_data)}\n')
 
     user_app_options()
 
@@ -161,35 +159,21 @@ def get_latest_warehouse_values():
     return get_warehouse_stock[-1]
 
 
-def update_data(new_sales_list, latest_stock, latest_warehouse_stock):
+def update_data(new_sales_list, store_stock, get_warehouse_stock):
     """Calculate latest Data after user adds new sales."""
 
     updated_store_data = []
     updated_warehouse_data = []
     index = 0
     for sales in new_sales_list:
-        add_sales_store = int(latest_stock[index]) - int(sales)
-        add_sales_warehouse = int(latest_warehouse_stock[index]) - int(sales)
+        add_sales_store = int(store_stock[index]) - int(sales)
+        add_sales_warehouse = int(get_warehouse_stock[index]) - int(sales)
         index = index + 1
         updated_store_data.append(add_sales_store)
         updated_warehouse_data.append(add_sales_warehouse)
 
     SHEET.worksheet("store_stock").append_row(updated_store_data)
     SHEET.worksheet("warehouse_stock").append_row(updated_warehouse_data)
-
-
-# def stock_in_transit(latest_warehouse_stock):
-#     """
-#     When user adds new sales,
-#     all sheets gets updated.
-#     """
-#     total_stock = []
-
-#     for stock in latest_warehouse_stock:
-#         add_stock = range(stock)
-#         total_stock.append(add_stock)
-
-#     print(f"Total Transit Stock: {total_stock}")
 
 
 welcome_user()
