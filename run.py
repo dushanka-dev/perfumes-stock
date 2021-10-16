@@ -106,9 +106,8 @@ def add_daily_sales():
 
     print("Updating Sales...")
 
-    store_stock = SHEET.worksheet("store_stock").get_all_values()
-    latest_stock = store_stock[-1]
-    update_data(new_sales_list, latest_stock)
+    latest_store_stock = get_stock_values()
+    update_data(new_sales_list, latest_store_stock)
     print("Sales Updated Successfully\n")
 
     user_app_options()
@@ -141,6 +140,15 @@ def warehouse_stock():
     print(f'Latest Warehouse Stock: {", ".join(latest_warehouse_stock)}\n')
 
     user_app_options()
+
+
+def get_stock_values():
+    """
+    Get latest stock values from worksheets.
+    """
+
+    store_stock = SHEET.worksheet("store_stock").get_all_values()
+    return store_stock[-1]
 
 
 def update_data(new_sales_list, latest_stock):
