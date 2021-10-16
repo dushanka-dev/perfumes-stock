@@ -105,9 +105,11 @@ def add_daily_sales():
     daily_sales_sheet.append_row(new_sales_list)
 
     print("Updating Sales...")
-    print("Sales Updated Successfully")
+    print("Sales Updated Successfully\n")
 
     user_app_options()
+
+    # return new_sales_list
 
 
 def view_current_stock():
@@ -137,21 +139,15 @@ def warehouse_stock():
     user_app_options()
 
 
-# def update_data(new_sales_list):
+# def update_data(new_sales_list, latest_stock):
 #     """Calculate latest Data after user adds new sales."""
 
-#     store_stock = SHEET.worksheet("store_stock").get_all_values()
-#     latest_stock = store_stock[-1]
-
-#     sales_list = int(new_sales_list)
-#     stock_list = int(latest_stock)
-
 #     updated_store_data = []
-#     for sales in range(sales_list):
-#         add_sales_store = stock_list - sales
+#     for sales in new_sales_list:
+#         add_sales_store = latest_stock - int(sales)
 #         updated_store_data.append(add_sales_store)
 
-#     store_stock.append_row(updated_store_data)
+#     latest_stock.append_row(updated_store_data)
 
 
 # def stock_in_transit(latest_warehouse_stock):
@@ -170,7 +166,6 @@ def warehouse_stock():
 
 welcome_user()
 user_app_options()
-
 
 # python3 run.py
 # 1, 2, 3, 4, 5, 6, 7
