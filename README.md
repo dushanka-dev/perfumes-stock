@@ -160,6 +160,8 @@ When user adds a sale unit, all worksheets gets updated in real-time.
 
     * Checked the results by adding different sales units and stock to make sure the results are updated accordingly.
 
+* You may need to refresh Google sheets page to see live data.
+
 ## Credits
 
 * [Gitpod](https://www.gitpod.io/)
