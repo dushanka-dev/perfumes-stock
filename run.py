@@ -116,7 +116,7 @@ def add_sales_units():
 
     daily_sales_sheet = SHEET.worksheet("daily_sales")
     perfume_names = daily_sales_sheet.row_values(1)
-    print("What is today's sales?")
+    print("What is today's sales units?")
 
     new_sales_list = []
     for name in perfume_names:
@@ -125,12 +125,12 @@ def add_sales_units():
 
     daily_sales_sheet.append_row(new_sales_list)
 
-    print("Updating Sales...\n")
+    print("Updating Sales Units...\n")
 
     latest_store_stock = get_stock_values()
     updated_warehouse_stock = get_latest_warehouse_values()
     update_data(new_sales_list, latest_store_stock, updated_warehouse_stock)
-    print("Sales Updated Successfully\n")
+    print("Sales Units Updated Successfully\n")
 
     user_app_options()
 
@@ -188,7 +188,7 @@ def sell_through_rate(latest_sales_data, store_stock):
     sell_rate = float(sale_total) / float(stock_total) * 100
     sell_rate_total = round(sell_rate)
 
-    print(f"SELL THROUGH RATE: {sell_rate_total} %\n")
+    print(f"SELL-THROUGH RATE: {sell_rate_total} %\n")
 
     user_app_options()
 
