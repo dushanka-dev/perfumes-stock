@@ -78,6 +78,31 @@ def option_validation(user_selection):
     return True
 
 
+def get_sales_values():
+    """Get latest sales values from worksheet."""
+
+    latest_sales_data = SHEET.worksheet("daily_sales").get_all_values()
+    return latest_sales_data[-1]
+
+
+def get_stock_values():
+    """
+    Get latest Store stock values from worksheets.
+    """
+
+    store_stock = SHEET.worksheet("store_stock").get_all_values()
+    return store_stock[-1]
+
+
+def get_latest_warehouse_values():
+    """
+    Get latest Warehouse stock values from worksheets.
+    """
+
+    get_warehouse_stock = SHEET.worksheet("warehouse_stock").get_all_values()
+    return get_warehouse_stock[-1]
+
+
 def add_daily_sales():
     """
     User can add daily sale here.
@@ -129,31 +154,6 @@ def warehouse_stock():
     print(f'Latest Warehouse Stock: {", ".join(warehouse_data)}\n')
 
     user_app_options()
-
-
-def get_sales_values():
-    """Get latest sales values from worksheet."""
-
-    latest_sales_data = SHEET.worksheet("daily_sales").get_all_values()
-    return latest_sales_data[-1]
-
-
-def get_stock_values():
-    """
-    Get latest Store stock values from worksheets.
-    """
-
-    store_stock = SHEET.worksheet("store_stock").get_all_values()
-    return store_stock[-1]
-
-
-def get_latest_warehouse_values():
-    """
-    Get latest Warehouse stock values from worksheets.
-    """
-
-    get_warehouse_stock = SHEET.worksheet("warehouse_stock").get_all_values()
-    return get_warehouse_stock[-1]
 
 
 def update_data(new_sales_list, store_stock, get_warehouse_stock):
