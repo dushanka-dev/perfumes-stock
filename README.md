@@ -56,3 +56,23 @@ When user adds a sale, all worksheets gets updated in real-time.
     * Store Stock sheet will minus current stock from sales.
 
     * Warehouse Stock will minus from the current warehouse stock from sales.
+
+* View Current Stock
+
+    * User get to see the latest stock in store.
+    * This is updated live so if user adds a sales, this worksheet is updated so user always see the latest store stock.
+
+* View Warehouse Stock
+
+    * User can see the latest warehouse stock for the day.
+    * Warehouse is updated automatically when user adds a sale. 
+    * Warehouse staff save time by not having to minus stock in worksheets.
+
+* Sell_Through Rate
+
+    * Sell-through rate is used by businesses all around the world. It helps with identifying what product is selling and what is not. It helps business make forwarding decisions in stock to purchase in future. 
+
+    * The calculation: sales units / curent stock * 100
+
+    * This feature uses live data, so if user adds new sales units, the result for this feature will update.
+
