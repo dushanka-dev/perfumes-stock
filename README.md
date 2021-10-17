@@ -56,3 +56,67 @@ When user adds a sale, all worksheets gets updated in real-time.
     * Store Stock sheet will minus current stock from sales.
 
     * Warehouse Stock will minus from the current warehouse stock from sales.
+
+* View Current Stock
+
+    * User get to see the latest stock in store.
+    * This is updated live so if user adds a sales, this worksheet is updated so user always see the latest store stock.
+
+* View Warehouse Stock
+
+    * User can see the latest warehouse stock for the day.
+    * Warehouse is updated automatically when user adds a sale. 
+    * Warehouse staff save time by not having to minus stock in worksheets.
+
+* Sell_Through Rate
+
+    * Sell-through rate is used by businesses all around the world. It helps with identifying what product is selling and what is not. It helps business make forwarding decisions in stock to purchase in future. 
+
+    * The calculation: sales units / curent stock * 100
+
+    * This feature uses live data, so if user adds new sales units, the result for this feature will update.
+
+# Deployment
+
+# Testing
+
+* [PEPE8 Online Testing](http://pep8online.com/)
+    
+    * [Results]
+
+* No terminal errors
+
+* Add Daily Sales Testing
+
+    * Added sales in terminal and checked Daily_Sales Google Sheets to ensure each sale is been added correctly.
+
+    * Checked store_stock and warehouse_stock worksheets to ensure the stock getting calculated in real-time when user adds a sale.
+
+* View Current Stock
+
+    * Checked with the Google sheets to make sure the result shown to user matches the worksheet.
+
+    * Checked worksheet after adding new sale unit to ensure the worksheet results are the altest stock.
+
+* View Warehouse Stock
+
+    * After user adds sales, checked the warehouse worksheet to ensure it is updated with correct data.
+
+    * Check results with worksheet to make sure ser gets the latest result from worksheet.
+
+* Sell-Through Rate
+
+    * Added new sales units to worksheets and then ran the Sell-Through Rate feature to check if the calculation is correct based on lastest sales units and store stock.
+
+    * Checked the results by adding different sales units and stock to make sure the results are updated accordingly.
+
+## Credits
+
+* [Gitpod](https://www.gitpod.io/)
+* [GitHub](https://www.gitpod.io/)
+* [Heroku](https://www.gitpod.io/)
+* [Google](https://www.google.com/)
+* [Stack Overflow](https://stackoverflow.com/)
+* [PEP8 Online](http://pep8online.com/)
+* [Spell Checker](https://www.internetmarketingninjas.com/online-spell-checker.php)
+* [Corporate Finance Institute](https://corporatefinanceinstitute.com/resources/knowledge/ecommerce-saas/sell-through-rate/) (Sell-Through Rate Calculation)
