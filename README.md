@@ -166,8 +166,8 @@ When user adds a sale unit, all worksheets gets updated in real-time.
 ## Credits
 
 * [Gitpod](https://www.gitpod.io/)
-* [GitHub](https://www.gitpod.io/)
-* [Heroku](https://www.gitpod.io/)
+* [GitHub](https://github.com/)
+* [Heroku](https://www.heroku.com/)
 * [Google](https://www.google.com/)
 * [Google Sheets](https://www.google.co.uk/sheets/about/)
 * [Google Cloud Platform](https://cloud.google.com/)
