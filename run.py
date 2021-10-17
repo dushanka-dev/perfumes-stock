@@ -15,7 +15,7 @@ SHEET = GSPREAD_CLIENT.open('perfumes_stock')
 
 def welcome_user():
     """
-    Get users name and show welcome message
+    Get users name and display welcome message
     """
     users_name = input("What is your name?\n")
     print(f"Hello {users_name}.\nWelcome to your Perfumes Stock App\n")
@@ -23,7 +23,7 @@ def welcome_user():
 
 def user_app_options():
     """
-    Give users 3 app options to select from to run the program
+    Give users 4 app options to select from to run the program.
     """
 
     while True:
@@ -35,7 +35,7 @@ def user_app_options():
         print("What would you like to do today?\n")
         print(f"{add_sales}{current_stock}{warehouse_option}{sell_rate}")
 
-        print("Please ADD NUMBER next to options. Eg: 1 to Add Daily Sales :)")
+        print("Please ADD NUMBER. Eg: '1' for Add Daily Sales :)")
         user_selection = input("Pick a task from list above ^^\n")
         print(f"Selected Option: {user_selection}\n")
 
@@ -45,13 +45,13 @@ def user_app_options():
         if user_selection == "1":
             return add_daily_sales()
         if user_selection == "2":
-            print("Fetching Current Stock Data...\n")
+            print("Retrieving Current Stock Data...\n")
             return view_current_stock()
         if user_selection == "3":
-            print("Fetching Warehouse Stock Data...\n")
+            print("Retrieving Warehouse Stock Data...\n")
             return warehouse_stock()
         if user_selection == "4":
-            print("Fetching Sell-Through Rate Data...\n")
+            print("Retrieving Sell-Through Rate Data...\n")
             return sell_through_rate(sales_values, store_stock_values)
 
         option_validation(user_selection)
@@ -76,6 +76,7 @@ def option_validation(user_selection):
 
     except ValueError as err:
         print(f"Invalid option: {err}. Please try again...")
+        print("Plase add correct number. Eg: '1' to select Add Daily Sales\n")
         return False
 
     return True
@@ -187,7 +188,7 @@ def sell_through_rate(latest_sales_data, store_stock):
     sell_rate = float(sale_total) / float(stock_total) * 100
     sell_rate_total = round(sell_rate)
 
-    print(f"SELL THROUGH RATE: {sell_rate_total}%\n")
+    print(f"SELL THROUGH RATE: {sell_rate_total} %\n")
 
     user_app_options()
 
