@@ -12,16 +12,6 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('perfumes_stock')
 
-# # Daily Sales Worksheet
-# daily_sales = SHEET.worksheet('daily_sales')
-# sales_data = daily_sales.get_all_values()
-
-# # Warehouse Stock Worksheet
-# warehouse_stock = SHEET.worksheet('warehouse_stock')
-# warehouse_stock_data = warehouse_stock.get_all_values()
-
-# print(warehouse_stock_data)
-
 
 def welcome_user():
     """
@@ -45,7 +35,7 @@ def user_app_options():
         print("What would you like to do today?\n")
         print(f"{add_sales}{current_stock}{warehouse_option}{sell_rate}")
 
-        print("Tip: Select number next to option. Eg. 1 to Add Daily Sales :)")
+        print("Please ADD NUMBER next to options. Eg: 1 to Add Daily Sales :)")
         user_selection = input("Pick a task from list above ^^\n")
         print(f"Selected Option: {user_selection}\n")
 
@@ -97,7 +87,6 @@ def add_daily_sales():
 
     daily_sales_sheet = SHEET.worksheet("daily_sales")
     perfume_names = daily_sales_sheet.row_values(1)
-    # name_values = "\n".join(perfume_names)
     print("What is today's sales?")
 
     new_sales_list = []
@@ -194,15 +183,12 @@ def sell_through_rate(latest_sales_data, store_stock):
     sale_total = sum(sales_lists)
     stock_total = sum(stock_lists)
 
-    # for sale, stock in zip(range(sale_total), range(stock_total)):
     sell_rate = float(sale_total) / float(stock_total) * 100
     sell_rate_total = round(sell_rate)
 
-    # sell_rate = int(sale_data_string) / int(stock_data_string)
-    # latest_sell_rate = sum(sell_rate)
+    print(f"Latest Sell Rate: {sell_rate_total}%\n")
 
-    print(f"Latest Sell Rate: {sell_rate_total}%")
-    # print(f"Latest Sell Rate: {sale_data_string} {stock_data_string}%")
+    user_app_options()
 
 
 welcome_user()
