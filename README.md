@@ -1,31 +1,28 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# PERFUME STOCK
 
-Welcome Dushanka Perera,
+Perfume Stock is a Inventory app designed for businesses which handles inventory on day to day basis. 
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+The inspiration for this app came from a friend of mine who work for a Luxury French perfume company. She work as a Sales Manager and she encounters certain tasks which she does everyday, very reptetive. 
 
-## Reminders
+Perfume Stock App was born. 
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+Stock App has four main programs: Add Daily Sales, View Current Stock, View Warehouse Stock and Sell-Through Rate.
 
-## Creating the Heroku app
+The app is connected to Google sheets via API. Google sheets include: Daily slaes sheet, store stock sheet and Warehouse stock sheet.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+When user adds a sale, all worksheets gets updated in real-time.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+## Features
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+* Welcome the User
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+    * Beginning of the App the user is asked to enter their name.
+    * The app takes the user name input and gives them a personal welcome to the app.
 
-Connect your GitHub repository and deploy as normal.
+* User App Options
 
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
+    * User is given four options to choose from.
+        
+        * Add Daily Sales
+        * View Current Stock
+        * 
