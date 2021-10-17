@@ -110,4 +110,13 @@ When user adds a sale, all worksheets gets updated in real-time.
 
     * Checked the results by adding different sales units and stock to make sure the results are updated accordingly.
 
+## Credits
 
+* [Gitpod](https://www.gitpod.io/)
+* [GitHub](https://www.gitpod.io/)
+* [Heroku](https://www.gitpod.io/)
+* [Google](https://www.google.com/)
+* [Stack Overflow](https://stackoverflow.com/)
+* [PEP8 Online](http://pep8online.com/)
+* [Spell Checker](https://www.internetmarketingninjas.com/online-spell-checker.php)
+* [Corporate Finance Institute](https://corporatefinanceinstitute.com/resources/knowledge/ecommerce-saas/sell-through-rate/) (Sell-Through Rate Calculation)
