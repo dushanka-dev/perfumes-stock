@@ -37,23 +37,23 @@ def user_app_options():
     """
 
     while True:
-        current_stock = "View Current Stock\n".strip("")
-        add_sales = "Add Daily Sales\n".strip("")
-        warehouse_option = "View Warehouse Stock\n".strip("")
-        transit_stock = "Stock in Transit\n".strip("")
+        add_sales = "1 - Add Daily Sales\n".strip("")
+        current_stock = "2 - View Current Stock\n".strip("")
+        warehouse_option = "3 - View Warehouse Stock\n".strip("")
+        transit_stock = "4 - Stock in Transit\n".strip("")
 
         print("What would you like to do today?\n")
-        print(f"{current_stock}{add_sales}{warehouse_option}{transit_stock}")
+        print(f"{add_sales}{current_stock}{warehouse_option}{transit_stock}")
 
-        print("Tip: Copy & Paste your list selection to ensure no typos :)")
+        print("Tip: Select number next to option. Eg. 1 to Add Daily Sales :)")
         user_selection = input("Pick a task from list above ^^\n")
         print(f"Selected Option: {user_selection}\n")
 
-        if user_selection == "Add Daily Sales":
+        if user_selection == "1":
             return add_daily_sales()
-        if user_selection == "View Current Stock":
+        if user_selection == "2":
             return view_current_stock()
-        if user_selection == "View Warehouse Stock":
+        if user_selection == "3":
             return warehouse_stock()
         # if user_selection == "Stock in Transit":
         #     return warehouse_stock()
@@ -69,11 +69,11 @@ def option_validation(user_selection):
     """
 
     try:
+        if user_selection != "1":
+            raise ValueError(f"You selected {user_selection}")
         if user_selection != "View Current Stock":
-            raise ValueError(f"You selected {user_selection}")
-        if user_selection != "Add Daily Sales":
-            raise ValueError(f"You selected {user_selection}")
-        if user_selection != "View Warehouse Stock":
+            raise ValueError(f"2 {user_selection}")
+        if user_selection != "3":
             raise ValueError(f"You selected {user_selection}")
         # if user_selection != "Stock in Transit":
         #     raise ValueError(f"You selected {user_selection}")
