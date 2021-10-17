@@ -106,6 +106,18 @@ When user adds a sale, all worksheets gets updated in real-time.
 
 # Deployment
 
+* Visit [Heroku](https://www.heroku.com/)
+* Sign Up/Login
+* Select Create App
+* Name App and select region
+* Press Create App
+* Go to Settings page
+* Add config Vars
+* Add Buildpacks Python and Node.js
+* Go to Deploy section
+* Connect to Github Repo
+* Select deploy branch
+
 # Testing
 
 * [PEPE8 Online Testing](http://pep8online.com/)
