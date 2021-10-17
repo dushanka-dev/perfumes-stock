@@ -21,6 +21,8 @@ When user adds a sale, all worksheets gets updated in real-time.
     * Beginning of the App the user is asked to enter their name.
     * The app takes the user name input and gives them a personal welcome to the app.
 
+    ![Users Name](readme-files/screenshots/users-name.png)
+
 * User App Options
 
     * User is given four options to choose from.
@@ -35,7 +37,9 @@ When user adds a sale, all worksheets gets updated in real-time.
     * When user wants to select an option all they have to do is select the number before the option name.
     * This options was created so user does not have to keep writing the option name every time. This saves times and effort.
     * Less repetitive.
-    * User friendly.
+    * User friendly
+
+    ![App Options](readme-files/screenshots/app-options.png)
 
 * User Selected Option
 
@@ -57,16 +61,22 @@ When user adds a sale, all worksheets gets updated in real-time.
 
     * Warehouse Stock will minus from the current warehouse stock from sales.
 
+    ![sales-units](readme-files/screenshots/add-sales-units.png)
+
 * View Current Stock
 
     * User get to see the latest stock in store.
     * This is updated live so if user adds a sales, this worksheet is updated so user always see the latest store stock.
+
+    ![store-stocks](readme-files/screenshots/latest-store-stock.png)
 
 * View Warehouse Stock
 
     * User can see the latest warehouse stock for the day.
     * Warehouse is updated automatically when user adds a sale. 
     * Warehouse staff save time by not having to minus stock in worksheets.
+
+    ![warehouse-stocks](readme-files/screenshots/latest-warehouse-stock.png)
 
 * Sell_Through Rate
 
@@ -75,6 +85,15 @@ When user adds a sale, all worksheets gets updated in real-time.
     * The calculation: sales units / curent stock * 100
 
     * This feature uses live data, so if user adds new sales units, the result for this feature will update.
+
+    ![sell-through-rate](readme-files/screenshots/sell-through-rate.png)
+
+    ![daily_sales_worksheet](readme-files/screenshots/daily-sales-worksheet.png)
+
+    ![store-stock-worksheet](readme-files/screenshots/store-stock-worksheet.png)
+
+    ![warehouse-stock-worksheet](readme-files/screenshots/warehouse-stock-worksheet.png)
+
 
 # Deployment
 
