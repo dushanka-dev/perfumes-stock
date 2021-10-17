@@ -76,3 +76,38 @@ When user adds a sale, all worksheets gets updated in real-time.
 
     * This feature uses live data, so if user adds new sales units, the result for this feature will update.
 
+# Deployment
+
+# Testing
+
+* [PEPE8 Online Testing](http://pep8online.com/)
+    
+    * [Results]
+
+* No terminal errors
+
+* Add Daily Sales Testing
+
+    * Added sales in terminal and checked Daily_Sales Google Sheets to ensure each sale is been added correctly.
+
+    * Checked store_stock and warehouse_stock worksheets to ensure the stock getting calculated in real-time when user adds a sale.
+
+* View Current Stock
+
+    * Checked with the Google sheets to make sure the result shown to user matches the worksheet.
+
+    * Checked worksheet after adding new sale unit to ensure the worksheet results are the altest stock.
+
+* View Warehouse Stock
+
+    * After user adds sales, checked the warehouse worksheet to ensure it is updated with correct data.
+
+    * Check results with worksheet to make sure ser gets the latest result from worksheet.
+
+* Sell-Through Rate
+
+    * Added new sales units to worksheets and then ran the Sell-Through Rate feature to check if the calculation is correct based on lastest sales units and store stock.
+
+    * Checked the results by adding different sales units and stock to make sure the results are updated accordingly.
+
+
