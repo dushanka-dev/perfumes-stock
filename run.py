@@ -189,7 +189,7 @@ def update_data(new_sales_list, store_stock, get_warehouse_stock):
 def sell_through_rate(latest_sales_data, store_stock):
     """
     Calculate Sell through rate of stock.
-    Get latest sales units and stock. Convert to ints and get sum values. 
+    Get latest sales units and stock. Convert to ints and get sum values.
     Calculate to get the sell through rate and display to user
     """
 
