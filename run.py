@@ -187,15 +187,20 @@ def update_data(new_sales_list, store_stock, get_warehouse_stock):
 def sell_through_rate(latest_sales_data, store_stock):
     """Calculate Sell through rate of stock"""
 
-    sale_data_string = f'{"".join(latest_sales_data)}'
-    stock_data_string = f'{"".join(store_stock)}'
-    # sales_data_total = float(sale_data_string)
-    # stock_data_total = float(stock_data_string)
+    # sale_data_string = f'{"".join(latest_sales_data)}'
+    # stock_data_string = f'{"".join(store_stock)}'
+    sales_data_total = [int(i) for i in latest_sales_data]
+    stock_data_total = [int(j) for j in store_stock]
+
+    # for i, j in zip(sales_data_total, stock_data_total):
+    #     det = sum(i)
+    #     latest_sell_rate = sum(j)
 
     # sell_rate = int(sale_data_string) / int(stock_data_string)
     # latest_sell_rate = sum(sell_rate)
 
-    print(f"Latest Sell Rate: {sale_data_string} {stock_data_string}%")
+    print(f"Latest Sell Rate: {sales_data_total}{stock_data_total}%")
+    # print(f"Latest Sell Rate: {sale_data_string} {stock_data_string}%")
 
 
 welcome_user()
