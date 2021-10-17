@@ -2,11 +2,11 @@
 
 Perfume Stock is a Inventory app designed for businesses which handles inventory on day to day basis. 
 
-The inspiration for this app came from a friend of mine who work for a Luxury French perfume company. She work as a Sales Manager and she encounters certain tasks which she does everyday, very reptetive. 
+The inspiration for this app came from a friend of mine who work for a Luxury French perfume company. She work as a Sales Manager. Every day she performs same reptetive tasks. 
 
 Perfume Stock App was born. 
 
-Stock App has four main programs: Add Daily Sales, View Current Stock, View Warehouse Stock and Sell-Through Rate.
+Perfume Stock App has four main features: Add Sales Units, View Current Stock, View Warehouse Stock and Sell-Through Rate.
 
 The app is connected to Google sheets via API. Google sheets include: Daily sales sheet, store stock sheet and Warehouse stock sheet.
 
@@ -20,7 +20,8 @@ When user adds a sale, all worksheets gets updated in real-time.
 
     * Beginning of the App the user is asked to enter their name.
     * The app takes the user name input and gives them a personal welcome to the app.
-
+    <br/>
+    <br/>
     ![Users Name](readme-files/screenshots/users-name.png)
 
 * User App Options
@@ -38,7 +39,8 @@ When user adds a sale, all worksheets gets updated in real-time.
     * This options was created so user does not have to keep writing the option name every time. This saves times and effort.
     * Less repetitive.
     * User friendly
-
+    <br/>
+    <br/>
     ![App Options](readme-files/screenshots/app-options.png)
 
 * User Selected Option
@@ -60,14 +62,16 @@ When user adds a sale, all worksheets gets updated in real-time.
     * Store Stock sheet will minus current stock from sales.
 
     * Warehouse Stock will minus from the current warehouse stock from sales.
-
+    <br/>
+    <br/>
     ![sales-units](readme-files/screenshots/add-sales-units.png)
 
 * View Current Stock
 
     * User get to see the latest stock in store.
     * This is updated live so if user adds a sales, this worksheet is updated so user always see the latest store stock.
-
+    <br/>
+    <br/>
     ![store-stocks](readme-files/screenshots/latest-store-stock.png)
 
 * View Warehouse Stock
@@ -75,7 +79,8 @@ When user adds a sale, all worksheets gets updated in real-time.
     * User can see the latest warehouse stock for the day.
     * Warehouse is updated automatically when user adds a sale. 
     * Warehouse staff save time by not having to minus stock in worksheets.
-
+    <br/>
+    <br/>
     ![warehouse-stocks](readme-files/screenshots/latest-warehouse-stock.png)
 
 * Sell_Through Rate
@@ -85,13 +90,17 @@ When user adds a sale, all worksheets gets updated in real-time.
     * The calculation: sales units / curent stock * 100
 
     * This feature uses live data, so if user adds new sales units, the result for this feature will update.
-
+    <br/>
+    <br/>
     ![sell-through-rate](readme-files/screenshots/sell-through-rate.png)
-
+    <br/>
+    <br/>
     ![daily_sales_worksheet](readme-files/screenshots/daily-sales-worksheet.png)
-
+    <br/>
+    <br/>
     ![store-stock-worksheet](readme-files/screenshots/store-stock-worksheet.png)
-
+    <br/>
+    <br/>
     ![warehouse-stock-worksheet](readme-files/screenshots/warehouse-stock-worksheet.png)
 
 
