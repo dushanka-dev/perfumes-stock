@@ -67,8 +67,8 @@ def option_validation(user_selection):
     try:
         if user_selection != "1":
             raise ValueError(f"You selected {user_selection}")
-        if user_selection != "View Current Stock":
-            raise ValueError(f"2 {user_selection}")
+        if user_selection != "2":
+            raise ValueError(f"You selected {user_selection}")
         if user_selection != "3":
             raise ValueError(f"You selected {user_selection}")
         if user_selection != "4":
