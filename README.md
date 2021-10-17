@@ -18,51 +18,51 @@ When user adds a sale unit, all worksheets gets updated in real-time.
 
 * Welcome the User
 
-    * Beginning of the App the user is asked to enter their name.
-    * The app takes the user name input and gives them a personal welcome to the app.
+* Beginning of the App the user is asked to enter their name.
+* The app takes the user name input and gives them a personal welcome to the app.
     <br/>
     <br/>
     ![Users Name](readme-files/screenshots/welcome-user.png)
 
 * User App Options
 
-    * User is given four options to choose from.
+* User is given four options to choose from.
         
-        * Add Daily Sales
-        * View Current Stock
-        * View Warehouse Stock
-        * Sell-Through Rate
+    * Add Daily Sales
+    * View Current Stock
+    * View Warehouse Stock
+    * Sell-Through Rate
         <br/>
         <br/>
 * User App Options (Number selection)
 
-    * When user wants to select an option all they have to do is select the number before the option name.
-    * This options was created so user does not have to keep typing the option name every time. This saves time and effort.
-    * Less repetitive.
-    * User friendly
+* When user wants to select an option all they have to do is select the number before the option name.
+* This options was created so user does not have to keep typing the option name every time. This saves time and effort.
+* Less repetitive.
+* User friendly
     <br/>
     <br/>
     ![App Options](readme-files/screenshots/app-options.png)
 
 * User Selected Option
 
-    * This feature let's user know which option was selected.
+* This feature let's user know which option was selected.
 
 * Add Daily Sales
 
-    * When user selects Add Daily Sales, the terminal displays message asking user to add sales units sold.
+* When user selects Add Daily Sales, the terminal displays message asking user to add sales units sold.
 
-    * Each perfume will then be displayed letting user input sale unit data.
+* Each perfume will then be displayed letting user input sale unit data.
 
-    * Once all the perfumes are added, the users get's display message in terminal letting them know the app is updating sales units.
+* Once all the perfumes are added, the users get's display message in terminal letting them know the app is updating sales units.
 
-    * Once the update is completed, the user will see message saying sales added successfully.
+* Once the update is completed, the user will see message saying sales added successfully.
 
-    * When user adds sales, all worksheets gets updated automatically.
+* When user adds sales, all worksheets gets updated automatically.
 
-    * Store Stock sheet will minus current stock from sales.
+* Store Stock sheet will minus current stock from sales.
 
-    * Warehouse Stock will minus from the current warehouse stock from sales.
+* Warehouse Stock will minus from the current warehouse stock from sales.
     <br/>
     <br/>
     ![sales-units](readme-files/screenshots/add-sales-units.png)
@@ -74,23 +74,22 @@ When user adds a sale unit, all worksheets gets updated in real-time.
     <br/>
     <br/>
     ![store-stocks](readme-files/screenshots/latest-store-stock.png)
+    
+    * View Warehouse Stock
 
-* View Warehouse Stock
-
-    * User can see the latest warehouse stock for the day.
-    * Warehouse stock is updated automatically when user adds a sale. 
-    * Warehouse staff save time by not having to minus stock in worksheets manually.
+* User can see the latest warehouse stock for the day.
+* Warehouse stock is updated automatically when user adds a sale. 
+* Warehouse staff save time by not having to minus stock in worksheets manually.
     <br/>
     <br/>
     ![warehouse-stocks](readme-files/screenshots/latest-warehouse-stock.png)
-
 * Sell_Through Rate
 
-    * Sell-through rate is used by businesses all around the world. It helps with identifying what products are selling and what is not selling that well. It helps business make forwarding decisions in stock to purchase in future. 
+* Sell-through rate is used by businesses all around the world. It helps with identifying what products are selling and what is not selling that well. It helps business make forwarding decisions in stock to purchase in future. 
 
-    * The calculation: sales units / current stock * 100
+* The calculation: sales units / current stock * 100
 
-    * This feature uses live data, so if user adds new sales units, the result for this feature will update automatically.
+* This feature uses live data, so if user adds new sales units, the result for this feature will update automatically.
     <br/>
     <br/>
     ![sell-through-rate](readme-files/screenshots/sell-through-rate.png)
