@@ -121,7 +121,7 @@ def add_daily_sales():
 
     daily_sales_sheet.append_row(new_sales_list)
 
-    print("Updating Sales...")
+    print("Updating Sales...\n")
 
     latest_store_stock = get_stock_values()
     updated_warehouse_stock = get_latest_warehouse_values()
@@ -138,7 +138,7 @@ def view_current_stock():
     """
 
     current_store_stock = get_stock_values()
-    print(f'Latest Store Stock: {", ".join(current_store_stock)}\n')
+    print(f'LATEST STORE STOCK: {", ".join(current_store_stock)}\n')
 
     user_app_options()
 
@@ -151,7 +151,7 @@ def warehouse_stock():
 
     warehouse_data = get_latest_warehouse_values()
 
-    print(f'Latest Warehouse Stock: {", ".join(warehouse_data)}\n')
+    print(f'LATEST WAREHOUSE STOCK: {", ".join(warehouse_data)}\n')
 
     user_app_options()
 
@@ -184,7 +184,7 @@ def sell_through_rate(latest_sales_data, store_stock):
     sell_rate = float(sale_total) / float(stock_total) * 100
     sell_rate_total = round(sell_rate)
 
-    print(f"Latest Sell Rate: {sell_rate_total}%\n")
+    print(f"SELL THROUGH RATE: {sell_rate_total}%\n")
 
     user_app_options()
 
