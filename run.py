@@ -45,10 +45,13 @@ def user_app_options():
         if user_selection == "1":
             return add_daily_sales()
         if user_selection == "2":
+            print("Fetching Current Stock Data...\n")
             return view_current_stock()
         if user_selection == "3":
+            print("Fetching Warehouse Stock Data...\n")
             return warehouse_stock()
         if user_selection == "4":
+            print("Fetching Sell-Through Rate Data...\n")
             return sell_through_rate(sales_values, store_stock_values)
 
         option_validation(user_selection)
