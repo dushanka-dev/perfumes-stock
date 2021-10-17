@@ -24,6 +24,8 @@ def welcome_user():
 def user_app_options():
     """
     Give users 4 app options to select from to run the program.
+    Check user has entered the correct number
+    for the option they wish to run.
     """
 
     while True:
@@ -59,9 +61,10 @@ def user_app_options():
 
 def option_validation(user_selection):
     """
-    Validate user has input to ensure users input is strings and not ints.
+    Validate user has input to ensure users input correct number.
     Also, check user has only selected the options from the list given
     and throw error if user puts anything else.
+    Give user example if the value is incorrect so they can try again
     """
 
     try:
@@ -83,7 +86,9 @@ def option_validation(user_selection):
 
 
 def get_sales_values():
-    """Get latest sales values from worksheet."""
+    """
+    Get latest sales values from worksheet
+    """
 
     latest_sales_data = SHEET.worksheet("daily_sales").get_all_values()
     return latest_sales_data[-1]
@@ -91,7 +96,7 @@ def get_sales_values():
 
 def get_stock_values():
     """
-    Get latest Store stock values from worksheets.
+    Get latest Store stock values from worksheet
     """
 
     store_stock = SHEET.worksheet("store_stock").get_all_values()
@@ -100,7 +105,7 @@ def get_stock_values():
 
 def get_latest_warehouse_values():
     """
-    Get latest Warehouse stock values from worksheets.
+    Get latest Warehouse stock values from worksheet
     """
 
     get_warehouse_stock = SHEET.worksheet("warehouse_stock").get_all_values()
@@ -109,9 +114,10 @@ def get_latest_warehouse_values():
 
 def add_sales_units():
     """
-    User can add daily sale here.
-    Once users add sales it will be added to the worksheet.
-
+    User add daily sale units here.
+    Once users add sales units it will be added to the worksheet.
+    Each perfume will be displayed. Loop through each perfume.
+    Add new sales units to worksheet
     """
 
     daily_sales_sheet = SHEET.worksheet("daily_sales")
@@ -149,8 +155,7 @@ def view_current_stock():
 
 def warehouse_stock():
     """
-    This function calculates the latest stock in transit
-    from warehouse and display to user.
+    This function get latest warehouse stock and display to user.
     """
 
     warehouse_data = get_latest_warehouse_values()
@@ -161,7 +166,11 @@ def warehouse_stock():
 
 
 def update_data(new_sales_list, store_stock, get_warehouse_stock):
-    """Calculate latest Data after user adds new sales."""
+    """
+    Calculate latest Data after user adds new sales.
+    Create empty lists. Iterate through new sales, calculate and append
+    new updated store and warehouse stocks then update to worksheets
+    """
 
     updated_store_data = []
     updated_warehouse_data = []
@@ -178,7 +187,11 @@ def update_data(new_sales_list, store_stock, get_warehouse_stock):
 
 
 def sell_through_rate(latest_sales_data, store_stock):
-    """Calculate Sell through rate of stock"""
+    """
+    Calculate Sell through rate of stock.
+    Get latest sales units and stock. Convert to ints and get sum values. 
+    Calculate to get the sell through rate and display to user
+    """
 
     sales_lists = [int(i) for i in latest_sales_data]
     stock_lists = [int(j) for j in store_stock]
