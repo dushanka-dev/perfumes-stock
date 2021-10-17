@@ -208,5 +208,3 @@ def sell_through_rate(latest_sales_data, store_stock):
 
 welcome_user()
 user_app_options()
-
-# python run.py
