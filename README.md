@@ -25,4 +25,5 @@ When user adds a sale, all worksheets gets updated in real-time.
         
         * Add Daily Sales
         * View Current Stock
-        * 
+        * View Warehouse Stock
+        * Sell-Through Rate
