@@ -27,7 +27,7 @@ def user_app_options():
     """
 
     while True:
-        add_sales = "1 - Add Daily Sales\n".strip("")
+        add_sales = "1 - Add Sales Units\n".strip("")
         current_stock = "2 - View Current Stock\n".strip("")
         warehouse_option = "3 - View Warehouse Stock\n".strip("")
         sell_rate = "4 - Sell-Through Rate\n".strip("")
@@ -35,7 +35,7 @@ def user_app_options():
         print("What would you like to do today?\n")
         print(f"{add_sales}{current_stock}{warehouse_option}{sell_rate}")
 
-        print("Please ADD NUMBER. Eg: '1' for Add Daily Sales :)")
+        print("Please ADD NUMBER. Eg: '1' for Add Sales Units :)")
         user_selection = input("Pick a task from list above ^^\n")
         print(f"Selected Option: {user_selection}\n")
 
@@ -43,7 +43,7 @@ def user_app_options():
         store_stock_values = get_stock_values()
 
         if user_selection == "1":
-            return add_daily_sales()
+            return add_sales_units()
         if user_selection == "2":
             print("Retrieving Current Stock Data...\n")
             return view_current_stock()
@@ -76,7 +76,7 @@ def option_validation(user_selection):
 
     except ValueError as err:
         print(f"Invalid option: {err}. Please try again...")
-        print("Plase add correct number. Eg: '1' to select Add Daily Sales\n")
+        print("Plase add correct number. Eg: '1' to select Add Sales Units\n")
         return False
 
     return True
@@ -107,7 +107,7 @@ def get_latest_warehouse_values():
     return get_warehouse_stock[-1]
 
 
-def add_daily_sales():
+def add_sales_units():
     """
     User can add daily sale here.
     Once users add sales it will be added to the worksheet.
