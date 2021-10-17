@@ -189,17 +189,19 @@ def sell_through_rate(latest_sales_data, store_stock):
 
     # sale_data_string = f'{"".join(latest_sales_data)}'
     # stock_data_string = f'{"".join(store_stock)}'
-    sales_data_total = [int(i) for i in latest_sales_data]
-    stock_data_total = [int(j) for j in store_stock]
+    sales_lists = [int(i) for i in latest_sales_data]
+    stock_lists = [int(j) for j in store_stock]
+    sale_total = sum(sales_lists)
+    stock_total = sum(stock_lists)
 
-    # for i, j in zip(sales_data_total, stock_data_total):
-    #     det = sum(i)
-    #     latest_sell_rate = sum(j)
+    # for sale, stock in zip(range(sale_total), range(stock_total)):
+    sell_rate = float(sale_total) / float(stock_total) * 100
+    sell_rate_total = round(sell_rate)
 
     # sell_rate = int(sale_data_string) / int(stock_data_string)
     # latest_sell_rate = sum(sell_rate)
 
-    print(f"Latest Sell Rate: {sales_data_total}{stock_data_total}%")
+    print(f"Latest Sell Rate: {sell_rate_total}%")
     # print(f"Latest Sell Rate: {sale_data_string} {stock_data_string}%")
 
 
