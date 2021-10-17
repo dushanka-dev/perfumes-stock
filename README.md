@@ -131,7 +131,9 @@ When user adds a sale unit, all worksheets gets updated in real-time.
 
 # Testing
 
-* [PEPE8 Online Testing](http://pep8online.com/) - No errors
+* [PEPE8 Online Testing](http://pep8online.com/):
+   W292	210	19	no newline at end of file - I did add new line at line 211 of the file, however, when push the code to github it removes the newline.
+   If you copy and paste the actual code from gitpod you will not see any warnings.
 
 * No terminal errors
 
