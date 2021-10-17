@@ -40,14 +40,17 @@ def user_app_options():
         add_sales = "1 - Add Daily Sales\n".strip("")
         current_stock = "2 - View Current Stock\n".strip("")
         warehouse_option = "3 - View Warehouse Stock\n".strip("")
-        transit_stock = "4 - Stock in Transit\n".strip("")
+        sell_rate = "4 - Sell-Through Rate\n".strip("")
 
         print("What would you like to do today?\n")
-        print(f"{add_sales}{current_stock}{warehouse_option}{transit_stock}")
+        print(f"{add_sales}{current_stock}{warehouse_option}{sell_rate}")
 
         print("Tip: Select number next to option. Eg. 1 to Add Daily Sales :)")
         user_selection = input("Pick a task from list above ^^\n")
         print(f"Selected Option: {user_selection}\n")
+
+        sales_values = get_sales_values()
+        store_stock_values = get_stock_values()
 
         if user_selection == "1":
             return add_daily_sales()
@@ -55,8 +58,8 @@ def user_app_options():
             return view_current_stock()
         if user_selection == "3":
             return warehouse_stock()
-        # if user_selection == "Stock in Transit":
-        #     return warehouse_stock()
+        if user_selection == "4":
+            return sell_through_rate(sales_values, store_stock_values)
 
         option_validation(user_selection)
 
@@ -75,8 +78,8 @@ def option_validation(user_selection):
             raise ValueError(f"2 {user_selection}")
         if user_selection != "3":
             raise ValueError(f"You selected {user_selection}")
-        # if user_selection != "Stock in Transit":
-        #     raise ValueError(f"You selected {user_selection}")
+        if user_selection != "4":
+            raise ValueError(f"You selected {user_selection}")
 
     except ValueError as err:
         print(f"Invalid option: {err}. Please try again...")
@@ -113,8 +116,6 @@ def add_daily_sales():
 
     user_app_options()
 
-    # return new_sales_list
-
 
 def view_current_stock():
     """
@@ -139,6 +140,13 @@ def warehouse_stock():
     print(f'Latest Warehouse Stock: {", ".join(warehouse_data)}\n')
 
     user_app_options()
+
+
+def get_sales_values():
+    """Get latest sales values from worksheet."""
+
+    latest_sales_data = SHEET.worksheet("daily_sales").get_all_values()
+    return latest_sales_data[-1]
 
 
 def get_stock_values():
@@ -174,6 +182,20 @@ def update_data(new_sales_list, store_stock, get_warehouse_stock):
 
     SHEET.worksheet("store_stock").append_row(updated_store_data)
     SHEET.worksheet("warehouse_stock").append_row(updated_warehouse_data)
+
+
+def sell_through_rate(latest_sales_data, store_stock):
+    """Calculate Sell through rate of stock"""
+
+    sale_data_string = f'{"".join(latest_sales_data)}'
+    stock_data_string = f'{"".join(store_stock)}'
+    # sales_data_total = float(sale_data_string)
+    # stock_data_total = float(stock_data_string)
+
+    # sell_rate = int(sale_data_string) / int(stock_data_string)
+    # latest_sell_rate = sum(sell_rate)
+
+    print(f"Latest Sell Rate: {sale_data_string} {stock_data_string}%")
 
 
 welcome_user()
