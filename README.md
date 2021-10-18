@@ -114,7 +114,6 @@ When user adds a sale unit, all worksheets gets updated in real-time.
     <br/>
     ![error-handling](readme-files/screenshots/error-handling.png)
 
-
 # Deployment
 
 * Visit [Heroku](https://www.heroku.com/)
@@ -174,5 +173,8 @@ When user adds a sale unit, all worksheets gets updated in real-time.
 * [gspread](https://docs.gspread.org/en/latest/)
 * [Stack Overflow](https://stackoverflow.com/)
 * [PEP8 Online](http://pep8online.com/)
+* [Lucidchart](https://www.lucidchart.com/pages/)
 * [Spell Checker](https://www.internetmarketingninjas.com/online-spell-checker.php)
 * [Corporate Finance Institute](https://corporatefinanceinstitute.com/resources/knowledge/ecommerce-saas/sell-through-rate/) (Sell-Through Rate Calculation)
+# Notes
+![diagram](readme-files/diagram/Perfume-Stock-lucidchart.png)
